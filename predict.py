@@ -7,14 +7,14 @@ import cv2
 # Load config from a config file
 cfg = get_cfg()
 cfg.merge_from_file(model_zoo.get_config_file('COCO-Detection/retinanet_R_101_FPN_3x.yaml'))
-cfg.MODEL.WEIGHTS = './model_0002999.pth'
-cfg.MODEL.DEVICE = 'cpu'
+cfg.MODEL.WEIGHTS = '/home/gpu1/Documents/Projects/Mandar/train-object-detector-detectron2/output/model_final.pth'
+cfg.MODEL.DEVICE = 'cuda'
 
 # Create predictor instance
 predictor = DefaultPredictor(cfg)
 
 # Load image
-image = cv2.imread("./data/val/imgs/3e115eab82413cd4.jpg")
+image = cv2.imread(input('enter image path :'))
 
 # Perform prediction
 outputs = predictor(image)

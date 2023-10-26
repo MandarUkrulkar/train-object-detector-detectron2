@@ -39,8 +39,8 @@ def get_cfg(output_dir, learning_rate, batch_size, iterations, checkpoint_period
     cfg.DATASETS.TEST = ()
 
     # Set the device to use for training.
-    if device in ['cpu']:
-        cfg.MODEL.DEVICE = 'cpu'
+    if device in ['gpu']:
+        cfg.MODEL.DEVICE = 'cuda'
 
     # Set the number of data loader workers.
     cfg.DATALOADER.NUM_WORKERS = 2
@@ -152,8 +152,8 @@ def register_datasets(root_dir, class_list_file):
 
     # Register the train and validation datasets.
     for d in ['train', 'val']:
-        DatasetCatalog.register(d, lambda d=d: get_dicts(os.path.join(root_dir, d, 'imgs'),
-                                                         os.path.join(root_dir, d, 'anns')))
+        DatasetCatalog.register(d, lambda d=d: get_dicts(os.path.join(root_dir, d, 'images'),
+                                                         os.path.join(root_dir, d, 'labels')))
         # Set the metadata for the dataset.
         MetadataCatalog.get(d).set(thing_classes=classes_)
 

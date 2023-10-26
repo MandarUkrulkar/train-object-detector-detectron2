@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 import cv2
 
 
-IMGS_DIR = os.path.join('.', 'data', 'train', 'imgs')
-ANNS_DIR = os.path.join('.', 'data', 'train', 'anns')
+IMGS_DIR = os.path.join('.', 'data', 'train', 'images')
+ANNS_DIR = os.path.join('.', 'data', 'train', 'labels')
 
 if __name__ == "__main__":
     files = os.listdir(IMGS_DIR)

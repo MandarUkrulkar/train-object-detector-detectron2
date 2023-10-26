@@ -35,10 +35,10 @@ if __name__ == "__main__":
     parser.add_argument('--class-list', default='./class.names')
     parser.add_argument('--data-dir', default='./data')
     parser.add_argument('--output-dir', default='./output')
-    parser.add_argument('--device', default='cpu')
+    parser.add_argument('--device', default='gpu')
     parser.add_argument('--learning-rate', default=0.00025)
     parser.add_argument('--batch-size', default=4)
-    parser.add_argument('--iterations', default=10000)
+    parser.add_argument('--iterations', default=20000)
     parser.add_argument('--checkpoint-period', default=500)
     parser.add_argument('--model', default='COCO-Detection/retinanet_R_101_FPN_3x.yaml')
 
